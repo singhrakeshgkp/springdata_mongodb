@@ -19,6 +19,7 @@
 }
 ```
 - Create database and switch to that db using ```use <db name> command```.
-- Inserting single record
+- Inserting single record ```insert db.employee.insertOne({name:"rakesh",address:"gkp",country:"India"})```
+- Inserting multiple record ```insert db.employee.insertMany([{emp1data},{emp2data}])
 ## Finding Document
 - 
