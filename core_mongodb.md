@@ -5,7 +5,8 @@
       - [Apply Sorting](#apply-sorting)
       - [Limiting Data](#limiting-data)
    - [Operators](#Operators)
-   - [Nested Documet](#nested-document) 
+   - [Nested Documet](#nested-document)
+   - [updating and delete operations](#update-and-delete-operations)
 
 # Mongo DB
 - Simple Document
@@ -69,4 +70,15 @@
   - Get list of employee, having only passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:["passport","voterid"]})```
   - Get list of employee, having  passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:{$all: ["passport","voterid"]}})```. apart from voter id and passport it could have other things such as aadhaar as its not exact match its kind of contains query.
 - Get list of employee where employee.address.city = Noida. **query** ```db.employee.find({"address.city":"Noida"})```
-
+## Update and delete operations
+- **Delete**
+   - **Delete one by ID**  ```db.employee.deleteOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")})```
+   - **Delete many** ```db.employee.deleteMany({salary:"40000"})```
+- **Update**
+  - **Update one by ID**  ```db.employee.updateOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")},{$set: {name:"mahesh", salary: 50000}})```
+  - **Update Many**  ```db.employee.updateMany({salary:40000},{$set: {name:"mahesh", salary:50000}})```
+  - **Update one increment salary by 2k** ```db.employee.updateOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")},{$inc: {salary: 2000}})```
+  - **Update one decrement salary by 2k** ```db.employee.updateOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")},{$inc: {salary: -2000}})``` Here we used negative to decrease salary
+  - **Update one pull/remove item from an array** ```db.employee.updateOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")},{$pull: {kycdocs: "voterId"}})``` voterid will be removed.
+  - **Update one push/add item to an array** ```db.employee.updateOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")},{$push: {kycdocs: "employer id"}})``` employer id will be added.
+  - **Update one push/pull multiple item to/from an array** ```db.employee.updateOne({_id:ObjectId("3kjkjjk4j6kj6kjk5j5j55j55")},{$push: {kycdocs:{$each: ["electricity bill","water bill"]}}})```
