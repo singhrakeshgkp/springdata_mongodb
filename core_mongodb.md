@@ -33,7 +33,7 @@
     -  return list of employee (only name and country property) where employee country is India **query** ```db.employee.find({country:"India"},{name:1,country:1})```  
     -  output all employee (only name and country properties) **query** ```db.employee.find({},{name:1,country:1})
    
-## Applying Sorting
+## Apply Sorting
 - Sorting in ascending order, for sorting use employee name property. **query** ```db.employee.find().sort({name:1})
 - Sorting in descending order, for sorting use employee name property. **query** ```db.employee.find().sort({name:-1})
 ## Limiting Data
