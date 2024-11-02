@@ -64,9 +64,9 @@
 ## Nested Document
 ### Apply Filter on nested json doc
 - **Query on array**
- - Get list of employee, having passport in the kycDocs array. **query** ```db.employee.find({kycDocs:"password"})```
- - Get list of employee, having only passport in the kycDocs array. **query** ```db.employee.find({kycDocs:["password"]})```
- - Get list of employee, having only passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:["password","voterid"]})```
- - Get list of employee, having  passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:{$all: ["password","voterid"]}})```. apart from voter id and password it could have other things such as aadhaar as its not exact match its kind of contains query.
+  - Get list of employee, having passport in the kycDocs array. **query** ```db.employee.find({kycDocs:"password"})```
+  - Get list of employee, having only passport in the kycDocs array. **query** ```db.employee.find({kycDocs:["password"]})```
+  - Get list of employee, having only passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:["password","voterid"]})```
+  - Get list of employee, having  passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:{$all: ["password","voterid"]}})```. apart from voter id and password it could have other things such as aadhaar as its not exact match its kind of contains query.
 - Get list of employee where employee.address.city = Noida. **query** ```db.employee.find({"address.city":"Noida"})```
 
