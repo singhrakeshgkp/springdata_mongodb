@@ -13,7 +13,7 @@
 {
 "name":"rakesh",
 "address": "gkp",
-salary: 40000,
+"salary": 40000,
 "country":"India"
 }
 ``` 
