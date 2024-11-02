@@ -41,3 +41,11 @@
 ### Limiting Data
 - return number of available documents. **query** ```db.employee.find().count()```
 - return given number of documents. **query** ```db.employee.find().limit(5)```
+## Nested Document
+```json
+{
+name:"rakesh",
+sal:40000
+addresses:[{city:"noida", isPermanentAddress:false,country:"India"},{city:"Gorakhpur", isPermanentAddress:true,country:"India"}]
+}
+```
