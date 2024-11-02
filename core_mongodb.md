@@ -4,9 +4,9 @@
       - [Finding Document](#finding-document)
       - [Apply Sorting](#apply-sorting)
       - [Limiting Data](#limiting-data)
-   - [Operators](#Operators)
-   - [Nested Documet](#nested-document)
-   - [updating and delete operations](#update-and-delete-operations)
+      - [Operators](#Operators)
+      - [Nested Documet](#nested-document)
+      - [updating and delete operations](#update-and-delete-operations)
 
 # Mongo DB
 - Simple Document
