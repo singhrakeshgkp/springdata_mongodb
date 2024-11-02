@@ -53,6 +53,12 @@ addresses:[{city:"noida", isPermanentAddress:false,country:"India"},{city:"Gorak
 - return number of available documents. **query** ```db.employee.find().count()```
 - return given number of documents. **query** ```db.employee.find().limit(5)```
 
+## Operators
+- Filter using logical ```or``` operator. **query** ```db.employee.find({$or: [{country:"India"},{country:"USA"}]})```
+- Output all employee, where salary is greater than 20k. **query** ```db.employee.find({salary: {$gt: 20000}})```
+- ```$in``` and ```$nin``` IN and Not In Operators
+  - Output all employee, where employee country is India, USA or Russia. **query** ```db.employee.find({country: {$in: ["India","USA","Russia"]}})
+  - Output all employee, where employee country is not India, USA or Russia. **query** ```db.employee.find({country: {$nin: ["India","USA","Russia"]}})
 
 ## Nested Document
 
