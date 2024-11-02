@@ -20,9 +20,10 @@
 - Nested document
 ```json
 {
-name:"rakesh",
-sal:40000,
-addresses:[{city:"noida", isPermanentAddress:false,country:"India"},{city:"Gorakhpur", isPermanentAddress:true,country:"India"}]
+"name":"rakesh",
+"sal":40000,
+"kycDocs":["passport","voterid","aadhaar card"]
+"address":{"city":"noida", "isPermanentAddress":false,"country":"India"}
 }
 ```
   
@@ -61,4 +62,11 @@ addresses:[{city:"noida", isPermanentAddress:false,country:"India"},{city:"Gorak
   - Output all employee, where employee country is not India, USA or Russia. **query** ```db.employee.find({country: {$nin: ["India","USA","Russia"]}})```
 
 ## Nested Document
+### Apply Filter on nested json doc
+- **Query on array**
+ - Get list of employee, having passport in the kycDocs array. **query** ```db.employee.find({kycDocs:"password"})```
+ - Get list of employee, having only passport in the kycDocs array. **query** ```db.employee.find({kycDocs:["password"]})```
+ - Get list of employee, having only passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:["password","voterid"]})```
+ - Get list of employee, having  passport and voterid in the kycDocs array. **query** ```db.employee.find({kycDocs:{$all: ["password","voterid"]}})```. apart from voter id and password it could have other things such as aadhaar as its not exact match its kind of contains query.
+- Get list of employee where employee.address.city = Noida. **query** ```db.employee.find({"address.city":"Noida"})```
 
