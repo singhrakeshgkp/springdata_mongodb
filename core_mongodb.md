@@ -4,9 +4,28 @@
       - [Finding Document](#finding-document)
       - [Apply Sorting](#apply-sorting)
       - [Limiting Data](#limiting-data)
+   - [Operators](#Operators)
    - [Nested Documet](#nested-document) 
 
 # Mongo DB
+- Simple Document
+```json
+{
+"name":"rakesh",
+"address": "gkp",
+salary: 40000,
+"country":"India"
+}
+``` 
+- Nested document
+```json
+{
+name:"rakesh",
+sal:40000,
+addresses:[{city:"noida", isPermanentAddress:false,country:"India"},{city:"Gorakhpur", isPermanentAddress:true,country:"India"}]
+}
+```
+  
 ## Basic
 - MongoDB is document oriented database.
 - Collections & Documents
@@ -14,14 +33,6 @@
   - 
 
 ### Inserting Document
-- we are going to use following employee json doc
-```json
-{
-"name":"rakesh",
-"address": "gkp",
-"country":"India"
-}
-```
 - Create database and switch to that db using ```use <db name> command```.
 - Inserting single record ```insert db.employee.insertOne({name:"rakesh",address:"gkp",country:"India"})```
 - Inserting multiple record ```insert db.employee.insertMany([{emp1data},{emp2data}])```
@@ -41,11 +52,7 @@
 ### Limiting Data
 - return number of available documents. **query** ```db.employee.find().count()```
 - return given number of documents. **query** ```db.employee.find().limit(5)```
+
+
 ## Nested Document
-```json
-{
-name:"rakesh",
-sal:40000
-addresses:[{city:"noida", isPermanentAddress:false,country:"India"},{city:"Gorakhpur", isPermanentAddress:true,country:"India"}]
-}
-```
+
