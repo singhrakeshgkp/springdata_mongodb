@@ -10,4 +10,13 @@
   - 
 
 ## Inserting Document
+- we are going to use following employee json doc
+```json
+"name":"rakesh",
+"address": "gkp",
+"country":"India"
+```
+- Create database and switch to that db using ```use <db name> command```.
+- Inserting single record
 ## Finding Document
+- 
